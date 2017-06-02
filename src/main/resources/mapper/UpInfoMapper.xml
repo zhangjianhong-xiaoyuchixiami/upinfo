@@ -4,9 +4,9 @@
 <mapper namespace="org.qydata.mapper.UpInfoMapper">
 
 
-    <insert id="insertUpInfo" parameterType="String">
-        INSERT INTO qysms.SMSUpInfo(msgid,sp_code,src_mobile,msg_content,recv_time,createTime)
-        VALUES(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},nows())
+    <insert id="insertUpInfo" parameterType="org.qydata.entity.UpInfo">
+        INSERT INTO qysms.SMSUpInfo(msg_id,sp_code,src_mobile,msg_content,recv_time,createTime)
+        VALUES(#{upInfo.msg_id},#{upInfo.sp_code},#{upInfo.src_mobile},#{upInfo.msg_content},#{upInfo.recv_time},now())
     </insert>
 
 </mapper>
